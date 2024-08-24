@@ -63,7 +63,7 @@ name = "rhel-system-roles"
 
 [[customizations.user]]
 name = "rexuser"
-password = ""
+password = "cjNkaDR0MQo=" # notsecret
 key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV6IBK0uKIZOlia5CMNOyMiHB6V1FtEQvaKensQ0tQd"
 groups = ["wheel"]
 uid = 5001
