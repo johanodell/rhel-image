@@ -3,7 +3,7 @@ description = "RHEL Golden Image"
 version = "0.0.1"
 modules = []
 groups = []
-distro = "REPLACEME-DISTRO"
+distro = "rhel-9"
 
 [[packages]]
 name = "bind-utils"
