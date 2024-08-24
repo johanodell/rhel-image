@@ -1,6 +1,6 @@
 name = "rhel-golden-image"
 description = "RHEL Golden Image"
-version = "0.0.7"
+version = "0.0.1"
 modules = []
 groups = []
 distro = "REPLACEME-DISTRO"
