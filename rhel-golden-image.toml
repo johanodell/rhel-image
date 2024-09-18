@@ -1,6 +1,6 @@
 name = "rhel-golden-image"
 description = "RHEL Golden Image"
-version = "0.0.3"
+version = "0.0.4"
 modules = []
 groups = []
 distro = "rhel-9"
