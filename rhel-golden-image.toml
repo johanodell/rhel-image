@@ -87,13 +87,26 @@ enabled = ["cockpit", "ssh"]
 enabled = ["cockpit.socket", "sshd.service"]
 
 [[customizations.filesystem]]
-mountpoint = "/home"
-size = 1073741824
-
-[[customizations.filesystem]]
-mountpoint = "/tmp"
-size = 1073741824
-
+mountpoint = "/boot"
+size = "1 GiB"
 [[customizations.filesystem]]
 mountpoint = "/"
-size = 5368709120
+size = "8 GiB"
+[[customizations.filesystem]]
+mountpoint = "/home"
+size = "2 GiB"
+[[customizations.filesystem]]
+mountpoint = "/tmp"
+size = "2 GiB"
+[[customizations.filesystem]]
+mountpoint = "/var"
+size = "8 GiB"
+[[customizations.filesystem]]
+mountpoint = "/var/log"
+size = "2 GiB"
+[[customizations.filesystem]]
+mountpoint = "/var/log/audit"
+size = "2 GiB"
+[[customizations.filesystem]]
+mountpoint = "/var/tmp"
+size = "2 GiB"
