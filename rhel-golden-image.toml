@@ -1,9 +1,13 @@
-name = "rhel-golden-image"
+name = "virt-corp-rhel9-image-cis-2"
 description = "RHEL Golden Image"
-version = "0.0.4"
+version = "0.0.5"
 modules = []
 groups = []
 distro = "rhel-9"
+
+[[packages]]
+name = "aide"
+version = "*"
 
 [[packages]]
 name = "bind-utils"
@@ -60,7 +64,40 @@ name = "langpacks-en"
 name = "ansible-core"
 
 [[packages]]
-name = "rhel-system-roles"
+name = "rhel-system-roles" 
+
+[[packages]]
+name = "sudo"
+version = "*"
+
+[[packages]]
+name = "libpwquality"
+version = "*"
+
+[[packages]]
+name = "systemd-journal-remote"
+version = "*"
+
+[[packages]]
+name = "firewalld"
+version = "*"
+
+[[packages]]
+name = "nftables"
+version = "*"
+
+[[packages]]
+name = "libselinux"
+version = "*"
+
+[[packages]]
+name = "audit-libs"
+version = "*"
+
+[[packages]]
+name = "audit"
+version = "*"
+
 
 [customizations]
 
@@ -84,7 +121,11 @@ keyboard = "sv-latin1"
 enabled = ["cockpit", "ssh"]
 
 [customizations.services]
-enabled = ["cockpit.socket", "sshd.service"]
+enabled = ["auditd","crond","firewalld","systemd-journald","cockpit.socket", "sshd.service"]
+disabled = []
+
+[customizations.kernel]
+append = "audit_backlog_limit=8192 audit=1"
 
 [[customizations.filesystem]]
 mountpoint = "/boot"
@@ -110,3 +151,25 @@ size = "2 GiB"
 [[customizations.filesystem]]
 mountpoint = "/var/tmp"
 size = "2 GiB"
+
+[[customizations.post]]
+inline = [
+  "wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz",
+  "tar -xvf node_exporter-1.6.1.linux-amd64.tar.gz",
+  "mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/",
+  "chmod +x /usr/local/bin/node_exporter",
+  "useradd -rs /bin/false node_exporter",
+  "echo '[Unit]' | tee /etc/systemd/system/node_exporter.service",
+  "echo 'Description=Prometheus Node Exporter' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo 'After=network.target' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo '[Service]' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo 'User=node_exporter' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo 'ExecStart=/usr/local/bin/node_exporter' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo 'Restart=always' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo '[Install]' | tee -a /etc/systemd/system/node_exporter.service",
+  "echo 'WantedBy=multi-user.target' | tee -a /etc/systemd/system/node_exporter.service",
+  "systemctl daemon-reload",
+  "systemctl enable node_exporter",
+  "semanage fcontext -a -t bin_t '/usr/local/bin/node_exporter'",
+  "restorecon -v /usr/local/bin/node_exporter"
+]
