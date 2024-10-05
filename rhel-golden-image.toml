@@ -1,4 +1,4 @@
-name = "virt-corp-rhel9-image-cis-2"
+name = "rhel-golden-image"
 description = "RHEL Golden Image"
 version = "0.0.5"
 modules = []
