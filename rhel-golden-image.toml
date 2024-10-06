@@ -159,22 +159,23 @@ inline = [
   "mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/",
   "chmod +x /usr/local/bin/node_exporter",
   "useradd -rs /bin/false node_exporter",
-  "cat <<EOF > /etc/systemd/system/node_exporter.service",
-  "[Unit]",
-  "Description=Prometheus Node Exporter",
-  "After=network.target",
-  "",
-  "[Service]",
-  "User=node_exporter",
-  "ExecStart=/usr/local/bin/node_exporter",
-  "Restart=always",
-  "",
-  "[Install]",
-  "WantedBy=multi-user.target",
-  "EOF",
+  """cat << 'EOF' > /etc/systemd/system/node_exporter.service
+[Unit]
+Description=Prometheus Node Exporter
+After=network.target
+
+[Service]
+User=node_exporter
+ExecStart=/usr/local/bin/node_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF""",
   "systemctl daemon-reload",
   "systemctl enable node_exporter",
   "semanage fcontext -a -t bin_t '/usr/local/bin/node_exporter'",
   "restorecon -v /usr/local/bin/node_exporter"
 ]
+
 
