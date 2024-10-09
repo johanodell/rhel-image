@@ -127,46 +127,34 @@ disabled = []
 [customizations.kernel]
 append = "audit_backlog_limit=8192 audit=1"
 
-[customizations.vg]
-name = "virt-corp-vg"
-size = "35 GiB"  
-
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/boot"
 size = "1 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/"
 size = "8 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/home"
 size = "2 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/tmp"
 size = "2 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/var"
 size = "8 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/var/log"
 size = "2 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/var/log/audit"
 size = "2 GiB"
 
 [[customizations.filesystem]]
-vg = "virt-corp-vg"
 mountpoint = "/var/tmp"
 size = "2 GiB"
