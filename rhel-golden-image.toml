@@ -170,29 +170,3 @@ size = "2 GiB"
 vg = "virt-corp-vg"
 mountpoint = "/var/tmp"
 size = "2 GiB"
-
-
-[[customizations.filesystem]]
-mountpoint = "/boot"
-size = "1 GiB"
-[[customizations.filesystem]]
-mountpoint = "/"
-size = "8 GiB"
-[[customizations.filesystem]]
-mountpoint = "/home"
-size = "2 GiB"
-[[customizations.filesystem]]
-mountpoint = "/tmp"
-size = "2 GiB"
-[[customizations.filesystem]]
-mountpoint = "/var"
-size = "8 GiB"
-[[customizations.filesystem]]
-mountpoint = "/var/log"
-size = "2 GiB"
-[[customizations.filesystem]]
-mountpoint = "/var/log/audit"
-size = "2 GiB"
-[[customizations.filesystem]]
-mountpoint = "/var/tmp"
-size = "2 GiB"
