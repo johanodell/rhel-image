@@ -124,16 +124,13 @@ enabled = ["cockpit", "ssh"]
 enabled = ["auditd","crond","firewalld","systemd-journald","cockpit.socket", "sshd.service"]
 disabled = []
 
-[customizations.kernel]
-append = "audit_backlog_limit=8192 audit=1"
-
 [[customizations.filesystem]]
 mountpoint = "/boot"
 size = "1 GiB"
 
 [[customizations.filesystem]]
 mountpoint = "/"
-size = "8 GiB"
+size = "15 GiB"
 
 [[customizations.filesystem]]
 mountpoint = "/home"
@@ -149,11 +146,11 @@ size = "8 GiB"
 
 [[customizations.filesystem]]
 mountpoint = "/var/log"
-size = "2 GiB"
+size = "8 GiB"
 
 [[customizations.filesystem]]
 mountpoint = "/var/log/audit"
-size = "2 GiB"
+size = "8 GiB"
 
 [[customizations.filesystem]]
 mountpoint = "/var/tmp"
