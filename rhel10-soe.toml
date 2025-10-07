@@ -3,7 +3,7 @@ description = "RHEL10-soe"
 version = "0.0.1"
 modules = []
 groups = []
-distro = "rhel10"
+distro = "rhel-10.0"
 
 [[packages]]
 name = "bind-utils"
