@@ -1,5 +1,5 @@
-name = "rhel-10-beta"
-description = "RHEL10 beta"
+name = "rhel10-soe"
+description = "RHEL10-soe"
 version = "0.0.1"
 modules = []
 groups = []
@@ -102,24 +102,8 @@ disabled = []
 
 [[customizations.filesystem]]
 mountpoint = "/"
-size = "10 GiB"
-
-[[customizations.filesystem]]
-mountpoint = "/home"
 size = "6 GiB"
 
 [[customizations.filesystem]]
-mountpoint = "/tmp"
-size = "2 GiB"
-
-[[customizations.filesystem]]
 mountpoint = "/var"
-size = "8 GiB"
-
-[[customizations.filesystem]]
-mountpoint = "/var/log"
-size = "2 GiB"
-
-[[customizations.filesystem]]
-mountpoint = "/var/tmp"
-size = "2 GiB"
+size = "4 GiB"
