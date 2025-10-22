@@ -25,7 +25,7 @@
 #
 ###############################################################################
 
-name = "rhel9-cis-server-l1"
+name = "RHEL9-cis-server-l1"
 description = "CIS Red Hat Enterprise Linux 9 Benchmark for Level 1 - Server"
 version = "0.1.76"
 

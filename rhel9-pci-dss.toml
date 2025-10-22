@@ -26,7 +26,7 @@
 #
 ###############################################################################
 
-name = "rhel9-pci-dss"
+name = "RHEL9-pci-dss"
 description = "PCI-DSS v4.0.1 Control Baseline for Red Hat Enterprise Linux 9"
 version = "0.1.76"
 
