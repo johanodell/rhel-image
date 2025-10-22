@@ -1,4 +1,4 @@
-name = "RHEL9-soe"
+name = "rhel9-soe"
 description = "RHEL9 Standard Operating Environment"
 version = "0.0.1"
 modules = []

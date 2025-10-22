@@ -1,4 +1,4 @@
-name = "RHEL10-soe"
+name = "rhel10-soe"
 description = "RHEL10-soe"
 version = "0.0.1"
 modules = []
