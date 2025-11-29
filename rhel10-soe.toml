@@ -102,8 +102,8 @@ disabled = []
 
 [[customizations.filesystem]]
 mountpoint = "/"
-size = "6 GiB"
+minsize = "6 GiB"
 
 [[customizations.filesystem]]
 mountpoint = "/var"
-size = "4 GiB"
+minsize = "4 GiB"
