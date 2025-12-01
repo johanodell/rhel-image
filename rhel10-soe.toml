@@ -100,10 +100,3 @@ enabled = ["cockpit", "ssh"]
 enabled = ["crond","firewalld","systemd-journald","cockpit.socket", "sshd.service"]
 disabled = []
 
-[[customizations.filesystem]]
-mountpoint = "/"
-minsize = "6 GiB"
-
-[[customizations.filesystem]]
-mountpoint = "/var"
-minsize = "4 GiB"
